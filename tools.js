@@ -1,21 +1,29 @@
-output=null;
+function editedplayernamesobjtostring24(obj) {
+  // Define the headers for the editedplayernames table
+  const headers = ['firstname', 'commonname', 'playerjerseyname', 'surname', 'playerid'];
 
-async function convertplayertable23to24() {
-    
-    const file = document.getElementById('fifa23playertable').files[0];
-    let obj23 = await readtxtfile(file);
-    
-    let newdefaults={
-        icontrait1: 0,
-        icontrait2: 0,
-        muscularitycode: 0
-    }
-    
-    let obj24 = obj23.map(obj => Object.assign({}, obj, newdefaults));
-    
-    let stringoutput = playerstableobjtostring24(obj24);
-    
-    downloadtxt(stringoutput, 'rm24file-playertableconversion.txt');
+  // Create the header row by joining headers with tabs
+  const headerRow = headers.join('\t');
+
+  // Initialize an array to hold all rows, starting with the header
+  const allRows = [headerRow];
+
+  // Assuming obj is an array of player objects for this table
+  obj.forEach(player => {
+      // Map the headers to the player's values, assuming all keys exist in the player object
+      const valuesRow = headers.map(header => {
+          if (!(header in player)) {
+              throw new Error(`Missing data: the key '${header}' does not exist in the player.`);
+          }
+          return String(player[header]);
+      }).join('\t');
+
+      // Add the values row to the allRows array
+      allRows.push(valuesRow);
+  });
+
+  // Combine all rows, separated by newline characters, into a single string
+  return allRows.join('\n');
 }
 
 function playerstableobjtostring24(obj){
@@ -75,4 +83,46 @@ function playerstableobjtostring24(obj){
   return allrows.join('\n');
 }
 
+function findnameid(name) {
+  let nameid = 0; // Default to 0 if name is not found
+  defaultplayernamestable24.forEach((player) => {
+      if (player.name === name) {
+          nameid = player.nameid;
+          return; // This return exits the current iteration but not the forEach loop
+      }
+  });
+  defaultdcplayernamestable24.forEach((player) => {
+    if (player.name === name) {
+        nameid = player.nameid;
+        return; // This return exits the current iteration but not the forEach loop
+    }
+});
+  return nameid;
+}
 
+function getshoe(){
+  let arr = [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,95,96,97,98,99,100,101,102,103,104,105,106,107,108,130,131,132,133,134,135,136,137,138,139,140,141,142,143,144,145,146,147,148,149,150,151,152,153,154,155,156,157,158,159,160,161,162,163,164,165,166,167,168,169,170,171,172,173,174,175,176,177,178,179,180,181,182,183,184,185,186,187,188,189,190,191,192,193,194,195,196,197,198,199,200,201,202,203,204,205,206,207,208,209,210,211,212,213,214,215,216,217,218,219,220,221,222,223,224,225,226,227,228,229,230,231,232,233,234,235,236,237,238,239,240,241,242,300,301,302,303,304,305,306,307,308,309,310,311,312,313,314,315];
+  let shoe = arr[randbetween(0,arr.length-1)];
+  return shoe;
+}
+
+function getgkglove(){
+  let arr = [73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,100,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,126];
+  let glove = arr[randbetween(0,arr.length-1)];
+  return glove;
+}
+
+function findplayerid(input){
+
+  let startpt=1;
+  if(input!=0){
+    let startpt=input;
+  }
+  
+  for(i=startpt;i<500000;i++){
+    if(burnedplayerids.includes(i)){continue}else{
+      burnedplayerids.push(i);
+      return i;
+    }
+  }
+}
