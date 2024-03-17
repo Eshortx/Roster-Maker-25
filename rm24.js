@@ -28,10 +28,10 @@ function makeplayers(){
             player.nationname || "Uganda");
 
         let attr=buildplayerattributes(
-            player.pos1||14, 
-            player.pos2||-1, 
-            player.pos3 ||-1, 
-            player.pos4 ||-1, 
+            player.pos1??14, 
+            player.pos2??-1, 
+            player.pos3??-1, 
+            player.pos4??-1, 
             player.finovr, 
             player.age);
 
@@ -113,9 +113,7 @@ function makeplayers(){
             muscularitycode: 0,
             animfreekickstartposcode: 0
     }
-
         outputplayers.push({...demo, ...appr, ...attr, ...othr});
-
     });
 
     loggerupdate("• Players made" + " (" + outputplayers.length + " players made)");
