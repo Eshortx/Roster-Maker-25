@@ -114,6 +114,12 @@ function getgkglove(){
 
 function findplayerid(input){
 
+  if(input!=0){
+    if(!burnedplayerids.find(x=>input==x)){
+      return input;
+    }
+  }
+
   let startpt=1;
   if(input!=0){
     let startpt=input;
