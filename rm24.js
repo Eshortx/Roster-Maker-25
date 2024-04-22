@@ -37,7 +37,7 @@ function makeplayers(){
 
         let othr={
             playerid: findplayerid(player.playerid) || 0,
-            nationality: defaultnationstable24.find(nation => nation.name === player.nationname).nationid || 146,
+            nationality: defaultnationstable24.find(nation => nation.nationname === player.nat).nationid || 146,
             firstname: player.given || "",
             surname: player.sur || "",
             playerjerseyname: player.jersey || "",
@@ -115,6 +115,9 @@ function makeplayers(){
     }
         outputplayers.push({...demo, ...appr, ...attr, ...othr});
     });
+
+    
+    
 
     loggerupdate("• Players made" + " (" + outputplayers.length + " players made)");
     
