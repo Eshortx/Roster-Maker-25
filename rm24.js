@@ -35,6 +35,8 @@ function makeplayers(){
             player.finovr, 
             player.age);
 
+        console.log(defaultnationstable24.find(nation => nation.nationname === player.nat));
+
         let othr={
             playerid: findplayerid(player.playerid) || 0,
             nationality: defaultnationstable24.find(nation => nation.nationname === player.nat).nationid || 146,
