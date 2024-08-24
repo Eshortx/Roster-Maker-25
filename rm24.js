@@ -25,7 +25,9 @@ function makeplayers(){
 
         let appr=buildplayerappearances(
             gender || 0, 
-            player.nationname || "Uganda");
+            player.nat || "Uganda");
+
+        
 
         let attr=buildplayerattributes(
             player.pos1??14, 
@@ -34,8 +36,6 @@ function makeplayers(){
             player.pos4??-1, 
             player.finovr, 
             player.age);
-
-        console.log(defaultnationstable24.find(nation => nation.nationname === player.nat));
 
         let othr={
             playerid: findplayerid(player.playerid) || 0,
@@ -115,16 +115,14 @@ function makeplayers(){
             muscularitycode: 0,
             animfreekickstartposcode: 0
     }
+        
         outputplayers.push({...demo, ...appr, ...attr, ...othr});
     });
-
-    
-    
 
     loggerupdate("• Players made" + " (" + outputplayers.length + " players made)");
     
     let output = playerstableobjtostring24(outputplayers);
-    
+
     loggerupdate("• Downloading players.txt");
     const now = new Date();
     const datetimeString = `${now.getFullYear()}${(now.getMonth()+1).toString().padStart(2, '0')}${now.getDate().toString().padStart(2, '0')}-${now.getHours().toString().padStart(2, '0')}${now.getMinutes().toString().padStart(2, '0')}${now.getSeconds().toString().padStart(2, '0')}`;
