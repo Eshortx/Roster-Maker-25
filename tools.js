@@ -1,4 +1,4 @@
-function editedplayernamesobjtostring24(obj) {
+function editedplayernamesobjtostring25(obj) {
   // Define the headers for the editedplayernames table
   const headers = ['firstname', 'commonname', 'playerjerseyname', 'surname', 'playerid'];
 
@@ -26,34 +26,9 @@ function editedplayernamesobjtostring24(obj) {
   return allRows.join('\n');
 }
 
-function playerstableobjtostring24(obj){
+function playerstableobjtostring25(obj){
 
-    const keysorder=['firstnameid', 'lastnameid', 'playerjerseynameid', 'commonnameid', 'gkglovetypecode',
-    'skintypecode', 'haircolorcode', 'facialhairtypecode', 'curve', 'jerseystylecode',
-    'agility', 'tattooback', 'accessorycode4', 'gksavetype', 'positioning',
-    'tattooleftarm', 'hairtypecode', 'standingtackle', 'preferredposition3', 'longpassing',
-    'penalties', 'animfreekickstartposcode', 'isretiring', 'longshots', 'gkdiving',
-    'icontrait2', 'interceptions', 'shoecolorcode2', 'crossing', 'potential',
-    'gkreflexes', 'finishingcode1', 'reactions', 'composure', 'vision',
-    'contractvaliduntil', 'finishing', 'dribbling', 'slidingtackle', 'accessorycode3',
-    'accessorycolourcode1', 'headtypecode', 'driref', 'sprintspeed', 'height',
-    'hasseasonaljersey', 'tattoohead', 'preferredposition2', 'strength', 'shoetypecode',
-    'birthdate', 'preferredposition1', 'tattooleftleg', 'ballcontrol', 'phypos',
-    'shotpower', 'trait1', 'socklengthcode', 'weight', 'hashighqualityhead',
-    'tattoorightarm', 'icontrait1', 'balance', 'gender', 'headassetid',
-    'gkkicking', 'defspe', 'internationalrep', 'shortpassing', 'freekickaccuracy',
-    'skillmoves', 'faceposerpreset', 'usercaneditname', 'avatarpomid', 'attackingworkrate',
-    'finishingcode2', 'aggression', 'acceleration', 'paskic', 'headingaccuracy',
-    'iscustomized', 'eyebrowcode', 'runningcode2', 'modifier', 'gkhandling',
-    'eyecolorcode', 'jerseysleevelengthcode', 'accessorycolourcode3', 'accessorycode1',
-    'playerjointeamdate', 'headclasscode', 'defensiveworkrate', 'tattoofront', 'nationality',
-    'preferredfoot', 'sideburnscode', 'weakfootabilitytypecode', 'jumping', 'personality',
-    'gkkickstyle', 'stamina', 'playerid', 'accessorycolourcode4', 'gkpositioning',
-    'headvariation', 'skillmoveslikelihood', 'trait2', 'shohan', 'skintonecode',
-    'shortstyle', 'overallrating', 'smallsidedshoetypecode', 'emotion', 'runstylecode',
-    'muscularitycode', 'jerseyfit', 'accessorycode2', 'shoedesigncode', 'shoecolorcode1',
-    'hairstylecode', 'bodytypecode', 'animpenaltiesstartposcode', 'pacdiv', 'defensiveawareness',
-    'runningcode1', 'preferredposition4', 'volleys', 'accessorycolourcode2', 'tattoorightleg', 'facialhaircolorcode'];
+    const keysorder=['firstnameid', 'lastnameid', 'playerjerseynameid', 'commonnameid', 'role3', 'gkglovetypecode', 'role2', 'role1', 'eyebrowcode', 'skintypecode', 'haircolorcode', 'facialhairtypecode', 'curve', 'jerseystylecode', 'agility', 'tattooback', 'accessorycode4', 'gksavetype', 'positioning', 'tattooleftarm', 'hairtypecode', 'standingtackle', 'preferredposition3', 'longpassing', 'penalties', 'animfreekickstartposcode', 'lipcolor', 'isretiring', 'longshots', 'gkdiving', 'icontrait2', 'interceptions', 'shoecolorcode2', 'crossing', 'potential', 'gkreflexes', 'finishingcode1', 'reactions', 'composure', 'skinsurfacepack', 'vision', 'contractvaliduntil', 'finishing', 'dribbling', 'slidingtackle', 'accessorycode3', 'accessorycolourcode1', 'headtypecode', 'driref', 'sprintspeed', 'undershortstyle', 'height', 'hasseasonaljersey', 'tattoohead', 'preferredposition2', 'strength', 'shoetypecode', 'birthdate', 'preferredposition1', 'tattooleftleg', 'skinmakeup', 'ballcontrol', 'phypos', 'shotpower', 'trait1', 'socklengthcode', 'weight', 'hashighqualityhead', 'eyedetail', 'tattoorightarm', 'icontrait1', 'balance', 'gender', 'headassetid', 'gkkicking', 'defspe', 'internationalrep', 'shortpassing', 'freekickaccuracy', 'skillmoves', 'faceposerpreset', 'usercaneditname', 'avatarpomid', 'finishingcode2', 'aggression', 'acceleration', 'paskic', 'headingaccuracy', 'iscustomized', 'runningcode2', 'modifier', 'gkhandling', 'eyecolorcode', 'jerseysleevelengthcode', 'accessorycolourcode3', 'accessorycode1', 'playerjointeamdate', 'headclasscode', 'tattoofront', 'nationality', 'preferredfoot', 'sideburnscode', 'weakfootabilitytypecode', 'jumping', 'personality', 'gkkickstyle', 'stamina', 'playerid', 'accessorycolourcode4', 'gkpositioning', 'headvariation', 'skillmoveslikelihood', 'trait2', 'shohan', 'skintonecode', 'shortstyle', 'overallrating', 'smallsidedshoetypecode', 'emotion', 'runstylecode', 'muscularitycode', 'skincomplexion', 'jerseyfit', 'accessorycode2', 'shoedesigncode', 'shoecolorcode1', 'hairstylecode', 'bodytypecode', 'animpenaltiesstartposcode', 'pacdiv', 'defensiveawareness', 'runningcode1', 'preferredposition4', 'volleys', 'accessorycolourcode2', 'tattoorightleg', 'facialhaircolorcode'];
 
     // Create the header row by joining keysOrder with tabs
   const headerrow = keysorder.join('\t');
@@ -85,13 +60,13 @@ function playerstableobjtostring24(obj){
 
 function findnameid(name) {
   let nameid = 0; // Default to 0 if name is not found
-  defaultplayernamestable24.forEach((player) => {
+  defaultplayernamestable25.forEach((player) => {
       if (player.name === name) {
           nameid = player.nameid;
           return; // This return exits the current iteration but not the forEach loop
       }
   });
-  defaultdcplayernamestable24.forEach((player) => {
+  defaultdcplayernamestable25.forEach((player) => {
     if (player.name === name) {
         nameid = player.nameid;
         return; // This return exits the current iteration but not the forEach loop
@@ -107,7 +82,7 @@ function getshoe(){
 }
 
 function getgkglove(){
-  let arr = [73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,100,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,124,126];
+  let arr = [73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91,92,93,94,95,96,97,98,100,102,104,105,106,107,108,109,110,111,112,113,114,115,116,117,118,119,120,121,122,123,125,126];
   let glove = arr[randbetween(0,arr.length-1)];
   return glove;
 }
