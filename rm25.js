@@ -51,7 +51,21 @@ function makeplayers(){
         role3: 0,
         gkglovetypecode: getgkglove() || 73,
         role2: 0,
-        role1: 0,
+role1:
+    (player.pos1 === 0) ? randbetween(1, 2) :
+    (player.pos1 === 3) ? randbetween(3, 6) :
+    (player.pos1 === 7) ? randbetween(7, 10) :
+    (player.pos1 === 5) ? randbetween(11, 13) :
+    (player.pos1 === 10) ? randbetween(14, 16) :
+    (player.pos1 === 14) ? randbetween(18, 22) :
+    (player.pos1 === 12) ? randbetween(23, 26) :
+    (player.pos1 === 16) ? randbetween(27, 30) :
+    (player.pos1 === 18) ? randbetween(31, 33) :
+    (player.pos1 === 23) ? randbetween(35, 37) :
+    (player.pos1 === 27) ? randbetween(38, 40) :
+    (player.pos1 === 25) ? randbetween(41, 44) : 0,
+
+
         eyebrowcode: 0,
         jerseystylecode: 1,
         skillmoves: player.skillmoves || 0,
