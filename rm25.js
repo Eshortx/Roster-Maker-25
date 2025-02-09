@@ -117,11 +117,11 @@ function makeplayers(){
         muscularitycode: 0,
         animfreekickstartposcode: 0,
         lipcolor: 0,
-        skinsurfacepack: 0,
+        skinsurfacepack: 100000,
         undershortstyle: 0,
         skinmakeup: 0,
-        eyedetail: 0,
-        skincomplexion: 0
+        eyedetail: randbetween(1, 6),
+        skincomplexion: randbetween(1, 10),
     };
 
         
